@@ -37,15 +37,35 @@ class Klant {
     }
   }
 
+  checkBetaald() {
+    this.facturen.forEach(factuur => {
+    if (factuur.betaald) {return("betaald")
+    } else {return("openstaand")}
+    });
+  }
+
+  printFacturen() {
+    this.facturen.forEach(factuur => {
+      console.log(`Factuur ${factuur.factuurnummer} ${factuur.bedrag} - ${this.checkBetaald()}`);
+    });
+  }
+
   getOpenstaandeFacturen() {
     return this.facturen.filter((f) => !f.betaald);
   }
 
   getTotaalBedragOpenstaand() {
+    let totaalprijs = 0
     // bereken het totaal van de facturen die nog niet betaald zijn.
+    this.facturen.forEach(factuur => {
+      if (factuur.betaald == false) {
+        totaalprijs += factuur.bedrag
+      }
+    });
+    return totaalprijs
   }
 }
 
 module.exports = {
-  Factuur,
+  Factuur, Klant
 };
