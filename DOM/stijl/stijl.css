@@ -11,10 +11,10 @@ body {
   margin: 5px 0;
   border-radius: 5px;
 }
-.betaald {
+#betaald {
   background-color: #d4edda;
 }
-.niet-betaald {
+#niet-betaald {
   background-color: #f8d7da;
 }
 h3 {
