@@ -20,13 +20,16 @@
 
 const facturen = require("./Admin")
 
+// facturen aanmaken
 const factuur1 = new facturen.Factuur("F2025001", "2025-06-01", 250.0)
 const factuur2 = new facturen.Factuur("F2025002", "2025-03-13", 150)
 
 factuur2.betaald = true
 
+//klanten aanmaken
 const karel = new facturen.Klant(1, "Karel Kleintjes", "KarelKleintjes@email.com")
 karel.facturen = [factuur1, factuur2]
 
+// klant zijn functies oproepen
 karel.printFacturen();
 console.log("Openstaand totaal:",karel.getTotaalBedragOpenstaand());

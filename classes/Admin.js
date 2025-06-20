@@ -38,6 +38,7 @@ class Klant {
   }
 
   checkBetaald() {
+    // kijken of de factuur betaald is en dit een titel geven
     this.facturen.forEach(factuur => {
     if (factuur.betaald) {return("betaald")
     } else {return("openstaand")}
@@ -45,6 +46,7 @@ class Klant {
   }
 
   printFacturen() {
+    // de info van de facturen printen
     this.facturen.forEach(factuur => {
       console.log(`Factuur ${factuur.factuurnummer} ${factuur.bedrag} - ${this.checkBetaald()}`);
     });
